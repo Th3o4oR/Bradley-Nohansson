@@ -17,7 +17,7 @@
 #macro FULLSCREEN true
 #macro TRUE_RES true
 #macro IDEAL_VIEW_W 0
-#macro IDEAL_VIEW_H 128 //320x200 on a 16:10 (8:5) monitor
+#macro IDEAL_VIEW_H 128 //Height = 200: 320x200 on a 16:10 (8:5) monitor
 
 //Some macro commands for dealing with window resizing
 #macro CENTER_WINDOW con_display.alarm[0] = 1
@@ -28,7 +28,7 @@
 #macro SAVEFILE "Nohansson.sav"
 
 //Debugging
-#macro VISUAL_DEBUG false
+//#macro VISUAL_DEBUG false
 #macro PHYSICS_DEBUG false
 #macro PHSYICS_DEBUG_FLAG phy_debug_render_obb | phy_debug_render_core_shapes | phy_debug_render_shapes
 #endregion

@@ -5,6 +5,11 @@ if (mode != TRANS_MODE.OFF)
 	//Open bars
 	if (mode == TRANS_MODE.INTRO) percent = max(0, percent-max((percent/10), 0.005));
 	//Close bars
+	else if (mode == TRANS_MODE.CUTSCENE)
+	{
+		if (percent > cutscene_bar_height) percent = max(cutscene_bar_height, percent-max((percent/10), 0.005));
+		else percent = min(cutscene_bar_height, percent+max(((1-percent)/10), 0.005));
+	}
 	else percent = min(1, percent+max(((1-percent)/10), 0.005));
 	
 	//Switch statement for what modes are selected

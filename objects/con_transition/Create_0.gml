@@ -7,9 +7,13 @@ enum TRANS_MODE
 	GOTO,
 	RESTART,
 	QUIT,
-	INTRO
+	INTRO,
+	CUTSCENE,
 }
 
 mode = TRANS_MODE.INTRO;
 percent = 1;
 target = room;
+
+cutscene_bar_height_init = 0.5;
+cutscene_bar_height = cutscene_bar_height_init;

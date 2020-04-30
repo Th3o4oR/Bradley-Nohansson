@@ -20,9 +20,10 @@ opposite_peek_amount = 0.05;
 //Zoom
 zoom = 1;
 max_zoom_out = 1;
-max_zoom_in = 0.75;
+max_zoom_in = 0.5;
 zoom_control = true;
 zoom_return_spd = 0.1;
+cam_off_control = true;
 cam_off_x = 0;
 cam_off_y = 0;
 

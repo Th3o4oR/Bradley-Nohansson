@@ -11,14 +11,14 @@ if (place_meeting(x, y, obj_player))
 		var _x = x;
 		var _y = y;
 		var _layer = layer;
-		var _hsp_dir = sign(hsp);
+		var _hsp = hsp;
 		instance_destroy();
 	}
 	
 	//Dust effect
 	repeat (20) with (instance_create_layer(_x, _y, _layer, obj_dust))
 	{
-		hsp = random_range(0, _hsp_dir);
+		hsp = random_range(0, _hsp);
 		vsp = random_range(0, -1);
 	}
 	

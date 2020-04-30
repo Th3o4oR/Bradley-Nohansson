@@ -5,6 +5,9 @@
 //lkey = ["A", vk_left];
 //rkey = ["D", vk_right];
 
+con_transition.cutscene_bar_height = 0.35;
+slide_transition(TRANS_MODE.CUTSCENE);
+
 enum MENU_PAGE
 {
 	MAIN,
@@ -34,6 +37,7 @@ menu_page_settings = menu_page_create(
 );
 var _load = load_from_file(SAVEFILE, "Settings", "Master volume")
 var _master_volume = (_load != undefined) ? _load : 0.5;
+menu_perform_action("Master volume", _master_volume);
 menu_page_audio = menu_page_create(
 	["MASTER",		MENU_ACTION.SLIDER,			"Master volume",	_master_volume,	[0, 1]],
 	["RETURN",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.SETTINGS]

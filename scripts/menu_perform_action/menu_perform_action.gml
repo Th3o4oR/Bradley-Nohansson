@@ -10,6 +10,7 @@ switch (_action)
 	case ("Play"):
 	{
 		//instance_create_layer(0, 0, layer, con_hud);
+		con_transition.cutscene_bar_height = con_transition.cutscene_bar_height_init;
 		slide_transition(TRANS_MODE.NEXT);
 		break;
 	}

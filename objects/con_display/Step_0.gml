@@ -19,3 +19,5 @@ if (global.fullscreen != window_get_fullscreen())
 		if (TRUE_RES) surface_resize(application_surface, ideal_width*window_scale, ideal_height*window_scale);
 	}
 }
+
+log(mouse_x, mouse_y); //Mouse coordinates don't update when window resizes!

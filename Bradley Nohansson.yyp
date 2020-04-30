@@ -615,6 +615,14 @@
             }
         },
         {
+            "Key": "c26a4d2d-6466-404e-9018-c71aac8059d2",
+            "Value": {
+                "id": "1eb2bec0-e850-411d-8bc7-7e4dfded8c29",
+                "resourcePath": "objects\/con_tutorial\/con_tutorial.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c2be74f5-249d-4c22-8193-9b2464ed76fd",
             "Value": {
                 "id": "8adc1ca8-0f06-4901-9d53-22280cc48916",
@@ -644,14 +652,6 @@
                 "id": "378f49d8-00d8-4209-88c3-03b1b619cddc",
                 "resourcePath": "options\/windows\/options_windows.yy",
                 "resourceType": "GMWindowsOptions"
-            }
-        },
-        {
-            "Key": "d0db43f3-7c29-4cd6-b26a-f627569bb79c",
-            "Value": {
-                "id": "a28dba7a-7ac1-447f-804f-4dceac1ef0fc",
-                "resourcePath": "scripts\/rect_overlap\/rect_overlap.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -794,12 +794,11 @@
         "038af635-0142-4e3a-8d80-7f26cc787263",
         "3838e033-fdee-4c97-a1fa-d29593c84189",
         "037f5d28-7f05-4843-8aec-f872f43ec62f",
+        "137902a6-0e86-4a5a-aeb3-fcb1ab194c81",
         "427ec954-70e9-4c77-957a-f61a16d0c6b9",
         "2c02a855-339a-4b3e-8423-47ed2f1f217e",
         "2c22d513-2f55-4610-a652-d2aacc60116b",
-        "8bb99f4c-daae-44ad-9034-419503e70e48",
-        "137902a6-0e86-4a5a-aeb3-fcb1ab194c81",
-        "d0db43f3-7c29-4cd6-b26a-f627569bb79c"
+        "8bb99f4c-daae-44ad-9034-419503e70e48"
     ],
     "tutorial": ""
 }

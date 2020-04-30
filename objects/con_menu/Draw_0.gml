@@ -59,13 +59,13 @@ for (var _i = 0; _i < _dsheight; _i ++)
 			
 				_c = (inputting) && (_i == menu_option[page]) ? c_yellow : c_black;
 			
-				var _start_x = _option_x;
-				if (_val != 0) draw_text_colour(_start_x, _option_y, "< ", _c,_c,_c,_c, 1);
-				_start_x += string_width("< ");
-				if (_val != array_length_1d(_array)-1) draw_text_colour(_start_x+_len, _option_y, " >", _c,_c,_c,_c, 1);
+				var _draw_x = _option_x;
+				if (_val != 0) draw_text_colour(_draw_x, _option_y, "< ", _c,_c,_c,_c, 1);
+				_draw_x += string_width("< ");
+				if (_val != array_length_1d(_array)-1) draw_text_colour(_draw_x+_len, _option_y, " >", _c,_c,_c,_c, 1);
 				
 				_c = (inputting) && (_i == menu_option[page]) ? c_white : c_black;
-				draw_text_colour(_start_x+(_len-string_width(_array[_val]))/2, _option_y, _array[_val], _c,_c,_c,_c, 1);
+				draw_text_colour(_draw_x+(_len-string_width(_array[_val]))/2, _option_y, _array[_val], _c,_c,_c,_c, 1);
 				break;
 			}
 			#endregion
@@ -105,7 +105,7 @@ var _scale = 2;
 //draw_set_valign(fa_middle);
 for (var _i = 0; _i < array_length_1d(_menu_keys); _i ++)
 {
-	var _x = VIEW_X + _w*2 + _pos[_i*2]*_scale;
+	var _x = _x_start - VIEW_W/4 - _w*5  + _pos[_i*2]*_scale;
 	var _y = VIEW_Y + VIEW_H/2 + _pos[(_i*2)+1]*_scale;
 	
 	var _image = keyboard_check(ord(_menu_keys[_i]));
@@ -113,5 +113,5 @@ for (var _i = 0; _i < array_length_1d(_menu_keys); _i ++)
 	//draw_text_transformed(_x+3, _y+3, _menu_keys[_i], 1, 1, 0);
 }
 var _image = keyboard_check(vk_enter);
-draw_sprite_ext(spr_enter_key_frame, _image, _x+(2*_w*_scale), VIEW_Y+(VIEW_H/2)-(_w*_scale), _scale, _scale, 0, c_white, 1);
+draw_sprite_ext(spr_enter_key_frame, _image, _x+(2*_w*_scale), VIEW_Y+(VIEW_H/2)-(sprite_get_height(spr_enter_key_frame)/2*_scale), _scale, _scale, 0, c_white, 1);
 #endregion

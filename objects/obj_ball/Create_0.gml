@@ -3,6 +3,22 @@
 display_max = 16; //How long the arrow displaying your charge should be
 scored = false;
 
+//var _fix = physics_fixture_create();
+//physics_fixture_set_polygon_shape(_fix);
+
+//physics_fixture_add_point(_fix, 8, 1);
+//physics_fixture_add_point(_fix, 7, 3);
+//physics_fixture_add_point(_fix, 6, 4);
+//physics_fixture_add_point(_fix, 3, 5);
+//physics_fixture_add_point(_fix, -3, 5);
+//physics_fixture_add_point(_fix, -6, 4);
+//physics_fixture_add_point(_fix, -7, 3);
+//physics_fixture_add_point(_fix, -8, 1);
+
+//physics_fixture_set_density(_fix, 0.35);
+//physics_fixture_set_restitution(_fix, 0.7);
+//physics_fixture_bind(_fix, id);
+
 var _top_coords = [
 	[-8, -1],
 	[-7, -3],
@@ -13,7 +29,7 @@ var _top_coords = [
 	[7, -3],
 	[8, -1]
 ];
-ball_fix_top = fixture_create(id, 0, _top_coords, 0.35, 0.6, 0.7, 0.1, 0.5, true);
+ball_fix_top = fixture_create(id, 0, _top_coords, 0.35, 0.6, 0.7, 0, 0.5, true); //Linear damping causing problems
 var _bot_coords = [
 	[8, 1],
 	[7, 3],
@@ -24,28 +40,29 @@ var _bot_coords = [
 	[-7, 3],
 	[-8, 1],
 ];
-ball_fix_bot = fixture_create(id, 0, _bot_coords, 0.35, 0.6, 0.7, 0.1, 0.5, true);
+ball_fix_bot = fixture_create(id, 0, _bot_coords, 0.35, 0.6, 0.7, 0, 0.5, true);
+
 var _rect_coords = [
-	[8, 2],
-	[-8, 2],
-	[-8, -2],
-	[8, -2],
+	[8, 1],
+	[-8, 1],
+	[-8, -1],
+	[8, -1],
 ];
-ball_fix_rect = fixture_create(id, 0, _rect_coords, 0.35, 0.6, 0.7, 0.1, 0.5, true);
+ball_fix_rect = fixture_create(id, 0, _rect_coords, 0.35, 0.6, 0.7, 0, 0.5, true);
 //physics_mass_properties(0.06, 0, 0, phy_inertia);
 
 //#region //Fixtures
 //var _fixtures = ds_list_create();
 
-//image_xscale = 0.5;
-//image_yscale = 0.5;
+//image_xscale = 1;
+//image_yscale = 1;
 
 //var _xs = image_xscale;
 //var _ys = image_yscale;
 //ds_list_add(_fixtures, fixture_create(-8*_xs,-1*_ys, -7*_xs,-3*_ys, -6*_xs,-4*_ys, -3*_xs,-5*_ys, 3*_xs,-5*_ys, 6*_xs,-4*_ys, 7*_xs,-3*_ys, 8*_xs,-1*_ys));
 //ds_list_add(_fixtures, fixture_create(8*_xs,1*_ys, 7*_xs,3*_ys, 6*_xs,4*_ys, 3*_xs,5*_ys, -3*_xs,5*_ys, -6*_xs,4*_ys, -7*_xs,3*_ys, -8*_xs,1*_ys));
 
-//ds_list_add(_fixtures, _fix);
+////ds_list_add(_fixtures, _fix);
 
 //repeat (ds_list_size(_fixtures))
 //{

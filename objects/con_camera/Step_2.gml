@@ -6,6 +6,10 @@ var _vw = VIEW_W;
 var _vh = VIEW_H;
 
 if (zoom_control) zoom = lerp(zoom, max_zoom_out, zoom_return_spd);
+if (cam_off_control)
+{
+	cam_off_y = lerp(cam_off_y, 0, zoom_return_spd);
+}
 var _cw = con_display.ideal_width; //cam-width
 var _ch = con_display.ideal_height; //cam-height
 camera_set_view_size(VIEW, _cw*zoom, _ch*zoom);
@@ -76,4 +80,4 @@ _vx += random_range(-shake_magnitude, shake_magnitude);
 _vy += random_range(-shake_magnitude, shake_magnitude);
 shake_magnitude = max(0, shake_magnitude-((1/shake_duration)*shake_magnitude_init));
 
-camera_set_view_pos(VIEW, _vx, _vy);
+camera_set_view_pos(VIEW, _vx+cam_off_x, _vy+cam_off_y);

@@ -45,7 +45,7 @@ global.current_res = (_load != undefined) ? _load : 0;
 //Appsurf / GUI / Window
 if (_load != undefined) menu_perform_action("Resolution", global.current_res);
 else surface_resize(application_surface, TRUE_RES?ideal_width*window_scale:ideal_width, TRUE_RES?ideal_height*window_scale:ideal_height);
-//display_set_gui_size(display_w, display_h); //Enable if gui needs to stay true to the game window
+//display_set_gui_size(ideal_width*window_scale, ideal_height*window_scale); //Enable if gui needs to stay true to the game window
 window_set_size(ideal_width*window_scale, ideal_height*window_scale);
 CENTER_WINDOW;
 
