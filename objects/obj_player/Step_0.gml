@@ -1,8 +1,17 @@
 /// @desc 
 
 var _onground = place_meeting(x, y+1, par_static);
-var _hi = keyboard_check(ord("D")) - keyboard_check(ord("A")); //H-input
-var _jump_pressed = keyboard_check_pressed(ord("W"));
+
+if (has_control)
+{
+	var _hi = keyboard_check(ord("D")) - keyboard_check(ord("A")); //H-input
+	var _jump_pressed = keyboard_check_pressed(ord("W"));
+}
+else
+{
+	var _hi = 0;
+	var _jump_pressed = 0;
+}
 
 switch (player_state)
 {

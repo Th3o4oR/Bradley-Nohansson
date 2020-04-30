@@ -1,7 +1,5 @@
 /// @desc 
 
-image_speed = 0; //No animation while I'm working on developing the sprites
-
 //NOTE!!
 // Floor always rounds downwards (1.5 --> 1, -1.5 --> -2)
 // Ceil is opposite
@@ -17,6 +15,7 @@ enum STATE
 player_state = STATE.IDLE;
 player_state_previous = player_state; //Keep track of new states
 state_new = true;
+has_control = true;
 
 //Oops!
 oopsed = false;

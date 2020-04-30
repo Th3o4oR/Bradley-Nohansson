@@ -1,5 +1,7 @@
 /// @desc 
 
+randomize();
+
 display_w = DISPLAY_W; //Can be changed to check what game would look like at other aspect ratios!
 display_h = DISPLAY_H;
 aspect_ratio = display_w/display_h;
@@ -48,4 +50,5 @@ window_set_size(ideal_width*window_scale, ideal_height*window_scale);
 CENTER_WINDOW;
 
 instance_create_layer(0, 0, layer, con_camera);
+instance_create_layer(0, 0, layer, con_transition);
 room_goto_next(); //Don't wanna stay in the "init" room

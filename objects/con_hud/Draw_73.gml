@@ -1,5 +1,7 @@
 ///// @desc 
 
+//Drawing properties
+draw_set_colour(c_white);
 draw_set_halign(fa_middle);
 draw_set_valign(fa_top);
 draw_set_font(fnt_pixelzim);
@@ -26,6 +28,3 @@ if (instance_exists(obj_player))
 
 //Set shader to default
 shader_reset();
-
-//Reset drawing color
-draw_set_colour(c_white);

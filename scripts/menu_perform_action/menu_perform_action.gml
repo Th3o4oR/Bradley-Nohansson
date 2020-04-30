@@ -9,8 +9,8 @@ switch (_action)
 {
 	case ("Play"):
 	{
-		instance_create_layer(0, 0, layer, con_hud);
-		room_goto_next();
+		//instance_create_layer(0, 0, layer, con_hud);
+		slide_transition(TRANS_MODE.NEXT);
 		break;
 	}
 	

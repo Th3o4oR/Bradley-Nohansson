@@ -14,7 +14,8 @@
         "2dfeed10-4549-4889-8f90-dcc350612252",
         "0c7b3184-cebf-472d-a20f-df4385015765",
         "24bc78f1-e12c-4c3b-a160-4225c87694f1",
-        "52cb09ef-fdfb-4508-853a-9b4220b27eec"
+        "52cb09ef-fdfb-4508-853a-9b4220b27eec",
+        "5052dc7a-bf59-4be3-9fc8-955f18a3d0c5"
     ],
     "filterType": "GMSprite",
     "folderName": "Used",
