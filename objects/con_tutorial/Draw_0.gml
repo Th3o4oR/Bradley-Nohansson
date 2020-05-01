@@ -30,8 +30,9 @@ if (current_line < ds_list_size(tutorial_text))
 	
 	surface_reset_target();
 	
-	var _pos = application_get_position();
-	draw_surface_stretched(_surf, _pos[0], _pos[1], _pos[2]-_pos[0], _pos[3]-_pos[1]);
+	//var _pos = application_get_position();
+	//draw_surface_stretched(_surf, _pos[0], _pos[1], _pos[2]-_pos[0], _pos[3]-_pos[1]);
+	draw_surface_stretched(_surf, VIEW_X, VIEW_Y, VIEW_W, VIEW_H);
 	
 	surface_free(_surf);
 }

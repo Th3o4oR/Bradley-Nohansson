@@ -1,6 +1,19 @@
 /// @desc 
 
-global.point_scale = lerp(global.point_scale, 1, 0.1);
+if (!global.pause_timer)
+{
+	global.timer += delta_time;
+	if (global.timer div 1000000 == 1)
+	{
+		global.timer_seconds ++;
+		global.timer = global.timer mod 1000000;
+	}
+	if (global.timer_seconds mod 10 == 0) global.timer_scale = 1.25;
+}
+timer_text = string(global.timer_seconds) + ":" + string_copy(string(global.timer), 1, 2);
+if (room == rm_level_end) && (!instance_exists(con_tutorial)) timer_text += "\n\nPrevious highscore:\n" + string(previous_highscore);
+
+global.timer_scale = lerp(global.timer_scale, 1, 0.1);
 
 #region //Update crosshair
 if (instance_exists(obj_player)) switch (obj_player.aim_option)

@@ -16,10 +16,15 @@ if (!active) switch (room)
 		break;
 	}
 	case (rm_level_3):
+	case (rm_level_4):
+	case (rm_level_5):
+	case (rm_level_6):
+	case (rm_level_7):
 	{
-		active = (global.points > 0);
+		active = obj_ball.scored;
 		break;
 	}
+	default: active = true; break;
 }
 
 if (!instance_exists(obj_player)) || (!active) exit;

@@ -12,7 +12,7 @@ active = false;
 
 //Particles!
 part = part_type_create();
-part_type_color2(part, c_navy, c_white); //Blue --> white
+part_type_color2(part, c_white, c_navy); //Blue --> white
 part_type_gravity(part, 0.005, 90); //Up
 part_type_life(part, room_speed, room_speed*2);
 part_type_alpha2(part, 1, 0);

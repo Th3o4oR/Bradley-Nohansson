@@ -4,7 +4,7 @@
 if (!scored) && (phy_active) && (physics_test_overlap(phy_position_x, phy_position_y, phy_rotation, obj_posts))
 {
 	scored = true;
-	global.points ++;
-	global.point_scale *= 1.5;
+	//global.points ++;
+	//global.timer_scale *= 1.5;
 }
-else if (!physics_test_overlap(phy_position_x, phy_position_y, phy_rotation, obj_posts)) scored = false;
+//else if (!physics_test_overlap(phy_position_x, phy_position_y, phy_rotation, obj_posts)) scored = false;

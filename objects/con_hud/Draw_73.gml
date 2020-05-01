@@ -21,13 +21,11 @@ if (instance_exists(obj_player))
 	if (crosshair_aim_assist) draw_circle_color(crosshair_pos_x, crosshair_pos_y, obj_player.ball_drag_dist[obj_player.aim_option], _col,_col, true);
 }
 
-if (instance_exists(obj_posts)) || (global.points > 0)
-{
-	//Draw score with shader
-	shader_set_uniform_f(outline_uniform_px_w, font_tex_w);
-	shader_set_uniform_f(outline_uniform_px_h, font_tex_h);
-	draw_text_ext_transformed(VIEW_X+VIEW_W/2, VIEW_Y+4, string(global.points), -1, GUI_W, global.point_scale, global.point_scale, 0);
-}
-
+//Draw score with shader
+//var _text = string_copy(string(_time), 1, 2) + ":" + string_copy(string(_time), string_length(string(_time)), string_length(string(_time))-2)
+shader_set_uniform_f(outline_uniform_px_w, font_tex_w);
+shader_set_uniform_f(outline_uniform_px_h, font_tex_h);
+draw_text_ext_transformed(VIEW_X+VIEW_W/2, VIEW_Y+4, timer_text, -1, GUI_W, global.timer_scale, global.timer_scale, 0);
+	
 //Set shader to default
 shader_reset();

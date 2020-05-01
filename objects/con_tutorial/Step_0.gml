@@ -28,13 +28,12 @@ if (instance_exists(obj_player))
 				current_line ++;
 				letters = 0;
 				length = string_length(tutorial_text[| current_line]);
+				text = "";
 				//text_x = GUI_W/2 - string_width_ext(endtext[current_line], -1, GUI_W-(xbuffer*2))/2; //Determine drawing position
 			}
 		}
 	}
-
-	//Start typing text
-	if (!change_text) && (current_line < ds_list_size(tutorial_text))
+	else if (current_line < ds_list_size(tutorial_text))
 	{
 		//Progress text
 		letters += spd;

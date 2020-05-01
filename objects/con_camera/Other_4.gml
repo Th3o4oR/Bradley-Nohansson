@@ -13,10 +13,13 @@ display_set_gui_size(VIEW_W, VIEW_H);
 
 switch (room)
 {
-	case (rm_level_1):
-	case (rm_level_2):
-	case (rm_level_3):
-	case (rm_level_4):
+	case (rm_init):
+	case (rm_menu):
+	{
+		break;
+	}
+	
+	default: //ALL LEVELS, MAKE SURE TO EXCLUDE POTENTIAL OTHER ROOMS
 	{
 		//NEED TO INITIATE VARIABLES BEFORE CREATING INSTANCES
 		cam_state = CAM_STATE.GO_TO_SMOOTH_FOLLOW;
@@ -24,8 +27,7 @@ switch (room)
 		zoom = max_zoom_in;
 		cam_off_y = con_transition.cutscene_bar_height * 0.5 * VIEW_H * zoom;
 		cam_off_control = false;
-		slide_transition(TRANS_MODE.CUTSCENE);
-		instance_create_layer(0, 0, layer, con_tutorial);
+		instance_create_layer(0, 0, "Control", con_tutorial);
 		break;
 	}
 }

@@ -20,9 +20,15 @@ crosshair_tex_w = texture_get_texel_width(sprite_get_texture(spr_crosshair, 0));
 crosshair_tex_h = texture_get_texel_height(sprite_get_texture(spr_crosshair, 0));
 #endregion
 
-#region //Score
-global.points = 0;
-global.point_scale = 1;
+#region //Timer
+//global.room_start_points = 0;
+global.pause_timer = true;
+global.timer = 0;
+global.timer_seconds = 0;
+global.timer_scale = 1;
+timer_text = "";
+var _load = load_from_file(SAVEFILE, "Score", "Highscore");
+previous_highscore = (_load != undefined) ? _load : 0;
 var _texture_ptr = sprite_get_texture(fnt_pixelzim, 0); // Find pointer to our texture
 font_tex_w = texture_get_texel_width(_texture_ptr); //Texel width
 font_tex_h = texture_get_texel_height(_texture_ptr); //Texel height
