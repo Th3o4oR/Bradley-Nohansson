@@ -100,6 +100,12 @@ switch (player_state)
 		{
 			image_xscale = sign(hsp);
 			image_speed = new_range(abs(hsp), 0, hsp_array[array_length_1d(hsp_array)-1], 0, 1);
+			if (anim_frame_end_ext(2, image_index, image_speed, sprite_index)) || (anim_frame_end_ext(6, image_index, image_speed, sprite_index)) //Every four frames
+			{
+				var _sound = step_sounds[irandom(array_length_1d(step_sounds)-1)];
+				var _snd = audio_play_sound(_sound, 10, false);
+				audio_sound_pitch(_snd, random_range(0.8, 1.2));
+			}
 		}
 		
 		//Horizontal collisions
@@ -155,7 +161,7 @@ switch (player_state)
 		if (random(1) < _range)
 		{
 			var _side = (hsp > 0) ? bbox_right : bbox_left;
-			with (instance_create_depth(_side, bbox_bottom, depth-1, obj_dust))
+			with (instance_create_layer(_side, bbox_bottom, "Dust", obj_dust))
 			{
 				hsp = random_range(other.hsp, other.hsp*2);
 				vsp = random_range(0, 0.1);
@@ -215,6 +221,19 @@ switch (player_state)
 			while (!place_meeting(x, y+sign(vsp), par_static)) y += sign(vsp);
 			if (vsp > 0)
 			{
+				//Landing sound
+				var _pick_sound = land_sounds[irandom(array_length_1d(land_sounds)-1)];
+				var _play_sound = audio_play_sound(_pick_sound, 5, false);
+				audio_sound_pitch(_play_sound, random_range(0.9, 1.1));
+				audio_sound_gain(_play_sound, new_range(clamp(vsp, -5, 5), -5, 5, 0, 1), 0);
+				
+				//Dust
+				repeat (5) with (instance_create_layer(x+random_range(-2, 2), bbox_bottom, "Dust", obj_dust))
+				{
+					hsp = random_range(-other.hsp, other.hsp*2);
+					vsp = random_range(0, -0.5);
+				}
+				
 				vsp = 0;
 				if (_hi != 0) player_state = STATE.RUN;
 				else if (hsp != 0) player_state = STATE.SLOW;

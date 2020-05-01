@@ -8,6 +8,8 @@ var _coords = [
 ];
 fixture = fixture_create(id, 0, _coords, 0, 0.9, 0, 0, 0, true);
 
+active = false;
+
 //Particles!
 part = part_type_create();
 part_type_color2(part, c_navy, c_white); //Blue --> white
@@ -20,4 +22,3 @@ part_type_shape(part, pt_shape_pixel);
 part_syst = part_system_create();
 part_emit = part_emitter_create(part_syst);
 part_emitter_region(part_syst, part_emit, x+2, x+sprite_width-1, y, y, ps_shape_rectangle, ps_distr_linear);
-part_emitter_stream(part_syst, part_emit, part, -3);

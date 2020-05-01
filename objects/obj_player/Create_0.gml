@@ -17,6 +17,10 @@ player_state_previous = player_state; //Keep track of new states
 state_new = true;
 has_control = true;
 
+//Sounds
+step_sounds = [snd_footstep1, snd_footstep2, snd_footstep3, snd_footstep4];
+land_sounds = [snd_landing, snd_landing1];
+
 //Oops!
 oopsed = false;
 

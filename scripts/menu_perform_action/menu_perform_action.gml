@@ -35,6 +35,8 @@ switch (_action)
 		var _h = con_display.ideal_height;
 		var _scale = power(2, floor(log2(con_display.window_max_scale))) / power(2, _value);
 		surface_resize(application_surface, _w*_scale, _h*_scale);
+		//window_set_size(_w*_scale, _h*_scale);
+		//CENTER_WINDOW;
 		save_to_file(SAVEFILE, "Settings", "Resolution", _value);
 		break;
 	}
@@ -42,6 +44,20 @@ switch (_action)
 	case ("Quit"):
 	{
 		game_end();
+		break;
+	}
+	
+	//Pause menu
+	case ("Pause resume"):
+	{
+		with (con_pause) event_perform(ev_other, ev_user0);
+		break;
+	}
+	
+	case ("Return to menu"):
+	{
+		with (con_pause) event_perform(ev_other, ev_user0);
+		slide_transition(TRANS_MODE.GOTO, rm_menu);
 		break;
 	}
 }

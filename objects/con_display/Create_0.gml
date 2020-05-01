@@ -51,4 +51,5 @@ CENTER_WINDOW;
 
 instance_create_layer(0, 0, layer, con_camera);
 instance_create_layer(0, 0, layer, con_transition);
+instance_create_layer(0, 0, layer, con_hud);
 room_goto_next(); //Don't wanna stay in the "init" room
