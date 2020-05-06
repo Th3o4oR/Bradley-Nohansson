@@ -14,3 +14,8 @@ if (room == rm_level_end)
 		previous_highscore = string(floor(previous_highscore)) + ":" + string_copy(string(_decimal), 1, 2);
 	}
 }
+else if (room == rm_menu)
+{
+	global.timer = 0;
+	global.timer_seconds = 0;
+}

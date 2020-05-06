@@ -15,14 +15,14 @@ if (inputting)
 	
 	var _hi_held = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 	var _hi_pressed = keyboard_check_pressed(ord("D")) - keyboard_check_pressed(ord("A"));
-	var _hi_released = keyboard_check_released(ord("D")) - keyboard_check_released(ord("A"));
+	//var _hi_released = keyboard_check_released(ord("D")) - keyboard_check_released(ord("A"));
 	
 	switch (_dsgrid[# 1, menu_option[page]])
 	{
 		case (MENU_ACTION.SLIDER):
 		{
 			if (_hi_held != 0) _dsgrid[# 3, menu_option[page]] = clamp(_dsgrid[# 3, menu_option[page]] + (_hi_held*0.01), 0, array_length_1d(_dsgrid[# 4, menu_option[page]])-1);
-			if (_hi_released != 0) && (_hi_held == 0) activated = true;
+			//if (_hi_released != 0) && (_hi_held == 0) activated = true;
 			break;
 		}
 		case (MENU_ACTION.SHIFT):
