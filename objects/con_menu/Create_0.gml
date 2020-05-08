@@ -51,7 +51,7 @@ menu_page_graphics = menu_page_create(
 );
 menu_page_erase = menu_page_create(
 	["CONFIRM",		MENU_ACTION.RUN_SCRIPT,		"Erase"],
-	["CANCEL",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.MAIN]
+	["CANCEL",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.SETTINGS]
 );
 menu_page_quit = menu_page_create(
 	["CONFIRM",		MENU_ACTION.RUN_SCRIPT,		"Quit"],
