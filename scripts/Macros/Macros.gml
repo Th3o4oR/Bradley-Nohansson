@@ -26,6 +26,9 @@
 #macro TILESIZE 8
 
 #macro SAVEFILE "Nohansson.sav"
+#macro SAVE_SETTING "Settings"
+#macro SAVE_SCORE "Score"
+#macro SAVE_DATA "Data"
 
 //Debugging
 //#macro VISUAL_DEBUG false

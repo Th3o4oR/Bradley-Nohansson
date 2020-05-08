@@ -27,7 +27,7 @@ global.timer = 0;
 global.timer_seconds = 0;
 global.timer_scale = 1;
 timer_text = "";
-var _load = load_from_file(SAVEFILE, "Score", "Highscore");
+var _load = load_from_file(SAVEFILE, SAVE_SCORE, "Highscore");
 previous_highscore = (_load != undefined) ? _load : 0;
 var _texture_ptr = sprite_get_texture(fnt_pixelzim, 0); // Find pointer to our texture
 font_tex_w = texture_get_texel_width(_texture_ptr); //Texel width

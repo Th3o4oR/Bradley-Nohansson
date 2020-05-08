@@ -21,7 +21,7 @@ if (!active) switch (room)
 	case (rm_level_6):
 	case (rm_level_7):
 	{
-		active = obj_ball.scored;
+		active = (instance_exists(obj_ball) && (obj_ball.scored == true))
 		break;
 	}
 	default: active = true; break;

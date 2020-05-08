@@ -12,20 +12,24 @@ switch (_action)
 		//instance_create_layer(0, 0, layer, con_hud);
 		con_transition.cutscene_bar_height = con_transition.cutscene_bar_height_init;
 		slide_transition(TRANS_MODE.NEXT);
+		var _load = load_from_file(SAVEFILE, SAVE_DATA, "Tutorial");
+		if (_load == undefined) || (_load == true) global.enable_tutorial = true;
+		else global.enable_tutorial = false;
+		save_to_file(SAVEFILE, SAVE_DATA, "Tutorial", true);
 		break;
 	}
 	
 	case ("Master volume"):
 	{
 		audio_master_gain(_value);
-		save_to_file(SAVEFILE, "Settings", "Master volume", _value);
+		save_to_file(SAVEFILE, SAVE_SETTING, "Master volume", _value);
 		break;
 	}
 	
 	case ("Fullscreen"):
 	{
 		global.fullscreen ^= true; //XOR -> flips boolean: 1 xor 1 = false, 0 xor 1 = true
-		save_to_file(SAVEFILE, "Settings", "Fullscreen", global.fullscreen);
+		save_to_file(SAVEFILE, SAVE_SETTING, "Fullscreen", global.fullscreen);
 		break;
 	}
 	
@@ -37,7 +41,13 @@ switch (_action)
 		surface_resize(application_surface, _w*_scale, _h*_scale);
 		//window_set_size(_w*_scale, _h*_scale);
 		//CENTER_WINDOW;
-		save_to_file(SAVEFILE, "Settings", "Resolution", _value);
+		save_to_file(SAVEFILE, SAVE_SETTING, "Resolution", _value);
+		break;
+	}
+	
+	case ("Erase"):
+	{
+		if (file_exists(SAVEFILE)) file_delete(SAVEFILE);
 		break;
 	}
 	

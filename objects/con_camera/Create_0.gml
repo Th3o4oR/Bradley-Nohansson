@@ -1,5 +1,7 @@
 /// @desc 
 
+global.previous_room = room;
+
 //Camera states
 enum CAM_STATE
 {

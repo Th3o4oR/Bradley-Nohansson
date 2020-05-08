@@ -25,7 +25,7 @@ window_max_scale = floor(display_w/ideal_width);
 if (ideal_height*window_max_scale == display_h) window_max_scale --;
 window_scale = window_max_scale;
 //show_message(window_max_scale);
-var _load = load_from_file(SAVEFILE, "Settings", "Fullscreen");
+var _load = load_from_file(SAVEFILE, SAVE_SETTING, "Fullscreen");
 global.fullscreen = (_load != undefined) ? _load : FULLSCREEN;
 
 //Calculate different resolutions
@@ -37,7 +37,7 @@ var _i = 0; while (frac(ideal_width*_scale) == 0) && (frac(ideal_height*_scale) 
 	_scale /= 2;
 	_i ++;
 }
-var _load = load_from_file(SAVEFILE, "Settings", "Resolution");
+var _load = load_from_file(SAVEFILE, SAVE_SETTING, "Resolution");
 global.current_res = (_load != undefined) ? _load : 0;
 
 //Setup views in rooms (now happens in con_camera room_start event)
@@ -48,6 +48,9 @@ else surface_resize(application_surface, TRUE_RES?ideal_width*window_scale:ideal
 //display_set_gui_size(ideal_width*window_scale, ideal_height*window_scale); //Enable if gui needs to stay true to the game window
 window_set_size(ideal_width*window_scale, ideal_height*window_scale);
 CENTER_WINDOW;
+
+//Enable tutorial
+global.enable_tutorial = true;
 
 instance_create_layer(0, 0, layer, con_camera);
 instance_create_layer(0, 0, layer, con_transition);

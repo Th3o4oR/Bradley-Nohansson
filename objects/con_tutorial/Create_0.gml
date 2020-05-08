@@ -5,7 +5,8 @@ global.pause_timer = true;
 
 #region //Tutorial text
 tutorial_text = ds_list_create();
-switch (room)
+var _room = (global.enable_tutorial == true) ? room : undefined;
+switch (_room)
 {
 	#region //One
 	case (rm_level_1):
@@ -117,6 +118,7 @@ switch (room)
 	#region //Default
 	default:
 	{
+		global.pause_timer = false;
 		with (con_camera)
 		{
 			zoom_control = true;

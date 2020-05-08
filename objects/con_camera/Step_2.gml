@@ -32,8 +32,8 @@ switch (cam_state)
 	{
 		if (instance_exists(following))
 		{
-			_vx = following.x - VIEW_W/2;
-			_vy = following.y - VIEW_H/2;
+			_vx = following.x - _vw/2;
+			_vy = following.y - _vh/2;
 			cam_state = CAM_STATE.SMOOTH_FOLLOW;
 		}
 		break;

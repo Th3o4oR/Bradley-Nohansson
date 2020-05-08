@@ -1,5 +1,7 @@
 /// @desc 
 
+if (global.previous_room == room) global.enable_tutorial = false;
+
 view_enabled = true;
 view_visible[0] = true;
 
@@ -16,6 +18,22 @@ switch (room)
 	case (rm_init):
 	case (rm_menu):
 	{
+		break;
+	}
+	
+	case (rm_level_end):
+	{
+		//NEED TO INITIATE VARIABLES BEFORE CREATING INSTANCES
+		cam_state = CAM_STATE.GO_TO_SMOOTH_FOLLOW;
+		zoom_control = false;
+		zoom = max_zoom_in;
+		cam_off_y = con_transition.cutscene_bar_height * 0.5 * VIEW_H * zoom;
+		cam_off_control = false;
+		
+		var _tutorial_state = global.enable_tutorial;
+		global.enable_tutorial = true;
+		instance_create_layer(0, 0, "Control", con_tutorial);
+		global.enable_tutorial = _tutorial_state;
 		break;
 	}
 	
