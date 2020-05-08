@@ -11,6 +11,11 @@ if (instance_exists(obj_player))
 		else if (letters >= length) change_text = true;
 		else if (current_line < ds_list_size(tutorial_text)) letters = string_length(tutorial_text[| current_line]);
 	}
+	else if (keyboard_check_pressed(vk_enter))
+	{
+		instance_destroy();
+		exit;
+	}
 
 	//Fade out current text
 	if (change_text)

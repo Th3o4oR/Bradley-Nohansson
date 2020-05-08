@@ -139,7 +139,6 @@ text = "";
 current_line = 0;
 length = string_length(tutorial_text[| current_line]);
 font = fnt_pixelzim;
-xbuffer = 4;
 restart = false;
 
 change_text = false;

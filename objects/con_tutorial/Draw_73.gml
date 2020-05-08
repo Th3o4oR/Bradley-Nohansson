@@ -23,12 +23,12 @@ if (current_line < ds_list_size(tutorial_text))
 	//draw_text_transformed_color(text_x, xbuffer, text, -1, GUI_W-(xbuffer*2), 1, 1, 0, c_black, c_white, 2, text_alpha);
 
 	//Info/Instructions
-	var _text = "(PRESS SPACE)";
+	var _text = "PRESS SPACE\nSkip - Press enter";
 	if (letters >= length) && (text_alpha >= 1) instruction_alpha = lerp(instruction_alpha, 1, alpha_lerp);
 	else instruction_alpha = lerp(instruction_alpha, 0, alpha_lerp);
 
 	draw_set_valign(fa_bottom);
-	draw_text_ext_transformed_color(_w/2, _h*0.95, _text, -1, _w, 1, 1, 0, _c,_c,_c,_c, instruction_alpha);
+	draw_text_ext_transformed_color(_w/2, _h*0.975, _text, -1, _w, 1, 1, 0, _c,_c,_c,_c, instruction_alpha);
 	
 	surface_reset_target();
 	

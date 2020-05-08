@@ -14,6 +14,7 @@ enum MENU_PAGE
 	SETTINGS, //Has subpages
 		AUDIO,
 		GRAPHICS,
+		ERASE,
 	QUIT,
 }
 
@@ -33,6 +34,7 @@ menu_page_main = menu_page_create(
 menu_page_settings = menu_page_create(
 	["AUDIO",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.AUDIO],
 	["GRAPHICS",	MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.GRAPHICS],
+	["ERASE DATA",	MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.ERASE],
 	["RETURN",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.MAIN]
 );
 var _load = load_from_file(SAVEFILE, "Settings", "Master volume")
@@ -47,13 +49,17 @@ menu_page_graphics = menu_page_create(
 	["RESOLUTION",	MENU_ACTION.SHIFT,			"Resolution",		global.current_res,		global.resolutions],
 	["RETURN",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.SETTINGS]
 );
+menu_page_erase = menu_page_create(
+	["CONFIRM",		MENU_ACTION.RUN_SCRIPT,		"Erase data"],
+	["RETURN",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.SETTINGS]
+);
 menu_page_quit = menu_page_create(
 	["CONFIRM",		MENU_ACTION.RUN_SCRIPT,		"Quit"],
 	["CANCEL",		MENU_ACTION.PAGE_TRANSFER,	MENU_PAGE.MAIN]
 );
 
 //The array below has to correspond to the order of the enumerator of menu pages
-menu_pages = [menu_page_main, menu_page_settings, menu_page_audio, menu_page_graphics, menu_page_quit];
+menu_pages = [menu_page_main, menu_page_settings, menu_page_audio, menu_page_graphics, menu_page_erase, menu_page_quit];
 page = 0;
 inputting = false; //True when the user is changing a setting
 activated = false;

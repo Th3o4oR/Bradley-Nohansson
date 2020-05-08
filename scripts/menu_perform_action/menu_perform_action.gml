@@ -41,6 +41,13 @@ switch (_action)
 		break;
 	}
 	
+	case ("Erase data"):
+	{
+		if (file_exists(SAVEFILE)) file_delete(SAVEFILE);
+		page = MENU_PAGE.SETTINGS;
+		break;
+	}
+	
 	case ("Quit"):
 	{
 		game_end();
