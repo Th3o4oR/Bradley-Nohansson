@@ -292,7 +292,7 @@
             "vspeed": 0,
             "vtiled": false,
             "x": 0,
-            "y": 3
+            "y": 4
         },
         {
             "__type": "GMRBackgroundLayer_Model:#YoYoStudio.MVCFormat",

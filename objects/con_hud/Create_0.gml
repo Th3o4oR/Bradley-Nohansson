@@ -16,8 +16,8 @@ crosshair_aim_assist = true; //Wether to draw a circle around the crosshair when
 crosshair_follow_spd = 0.25;
 //crosshair_anim_timer_init = room_speed*4;
 //crosshair_anim_timer = irandom_range(crosshair_anim_timer_init, 2*crosshair_anim_timer_init);
-crosshair_tex_w = texture_get_texel_width(sprite_get_texture(spr_crosshair, 0));
-crosshair_tex_h = texture_get_texel_height(sprite_get_texture(spr_crosshair, 0));
+crosshair_tex_w = texture_get_texel_width(sprite_get_texture(spr_crosshair_temp, 0));
+crosshair_tex_h = texture_get_texel_height(sprite_get_texture(spr_crosshair_temp, 0));
 #endregion
 
 #region //Timer

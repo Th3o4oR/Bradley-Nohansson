@@ -52,7 +52,7 @@ switch (cam_state)
 		break;
 	}
 	#endregion
-	#region //Peek
+	#region //Opposite peek
 	case (CAM_STATE.OPPOSITE_PEEK):
 	{
 		if (instance_exists(following))
